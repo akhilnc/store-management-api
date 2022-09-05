@@ -1,0 +1,3 @@
+Scaffold-DbContext "server=localhost; port=3306; database=laundry_app; user=root; password=Albert@123; Persist Security Info=False; Connect Timeout=300" Pomelo.EntityFrameworkCore.MySql -OutputDir Models -ContextDir DbContexts -Context LAppContext -f
+
+Scaffold-DbContext "server=143.110.249.11; port=3306; database=laundry_app; user=storemanagement; password=Panda@123; Persist Security Info=False; Connect Timeout=300" Pomelo.EntityFrameworkCore.MySql -OutputDir Models -ContextDir DbContexts -Context LAppContext -f

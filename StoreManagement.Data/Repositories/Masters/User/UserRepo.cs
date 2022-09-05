@@ -12,9 +12,9 @@ namespace StoreManagement.Data.Repositories.Masters.User
 {
     public class UserRepo: RepositoryBase<MstUser>,IUserRepo
     {
-        private readonly LAppContext _appContext;
+        private readonly StoreAppContext _appContext;
 
-        public UserRepo(LAppContext appContext) : base(appContext)
+        public UserRepo(StoreAppContext appContext) : base(appContext)
         {
             _appContext = appContext;
         }

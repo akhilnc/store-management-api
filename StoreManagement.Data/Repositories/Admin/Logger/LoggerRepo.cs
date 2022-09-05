@@ -8,9 +8,9 @@ namespace StoreManagement.Data.Repositories.Admin.Logger
 {
     public class AppLoggerRepo : IAppLoggerRepo
     {
-        private readonly LAppContext _appContext;
+        private readonly StoreAppContext _appContext;
 
-        public AppLoggerRepo(LAppContext appContext)
+        public AppLoggerRepo(StoreAppContext appContext)
         {
             _appContext = appContext;
         }

@@ -126,6 +126,9 @@
   <data name="NAME_REQUIRED" xml:space="preserve">
     <value>Name is required</value>
   </data>
+  <data name="PHONE_NUMBER_REQUIRED" xml:space="preserve">
+    <value>Phone number  is required</value>
+  </data>
   <data name="SHORT_NAME_REQUIRED" xml:space="preserve">
     <value>Short name is required</value>
   </data>

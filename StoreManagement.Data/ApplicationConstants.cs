@@ -1,5 +1,5 @@
 ﻿
-namespace billing.Data
+namespace StoreManagement.Data
 {
     public static class ApplicationConstants
     {

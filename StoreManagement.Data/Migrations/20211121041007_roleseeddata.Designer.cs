@@ -9,7 +9,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace StoreManagement.Data.Migrations
 {
-    [DbContext(typeof(LAppContext))]
+    [DbContext(typeof(StoreAppContext))]
     [Migration("20211121041007_roleseeddata")]
     partial class roleseeddata
     {

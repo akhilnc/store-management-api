@@ -6,8 +6,8 @@ namespace StoreManagement.Data.Repositories.Admin.Token
 {
     public class TokenRepo : RepositoryBase<AdminUserRefreshToken>, ITokenRepo
     {
-        private readonly LAppContext _appContext;
-        public TokenRepo(LAppContext appContext) : base(appContext)
+        private readonly StoreAppContext _appContext;
+        public TokenRepo(StoreAppContext appContext) : base(appContext)
         {
             _appContext = appContext;
         }

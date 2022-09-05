@@ -1,6 +1,6 @@
 ﻿using System;
+using StoreManagement.Data.EntitiyConfigurations;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata;
 using StoreManagement.Data.Models;
 // Code scaffolded by EF Core assumes nullable reference types (NRTs) are not used or disabled.
 // If you have enabled NRTs for your project, then un-comment the following line:
@@ -8,13 +8,13 @@ using StoreManagement.Data.Models;
 
 namespace StoreManagement.Data.DbContexts
 {
-    public partial class LAppContext : DbContext
+    public partial class StoreAppContext : DbContext
     {
-        public LAppContext()
+        public StoreAppContext()
         {
         }
 
-        public LAppContext(DbContextOptions<LAppContext> options)
+        public StoreAppContext(DbContextOptions<StoreAppContext> options)
             : base(options)
         {
         }
@@ -27,20 +27,8 @@ namespace StoreManagement.Data.DbContexts
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<MstUserRole>().HasData(
-                new MstUserRole
-                {
-                    Id=1,
-                    UId=Guid.NewGuid().ToString(),
-                    CreatedBy="test",
-                    CreatedOn=DateTime.Now,
-                    IsActive=true,
-                    ModifiedBy="asda",
-                    ModifiedOn=DateTime.Now,
-                    Name="admin",
-                    ShortName="Ad"
-                }
-                );
+            modelBuilder.ApplyConfigurationsFromAssembly(typeof(MstUserConfiguration).Assembly);
+
         }
     }
 }

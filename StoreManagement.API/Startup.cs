@@ -10,6 +10,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Npgsql;
 using System.Data;
+using Newtonsoft.Json.Converters;
+
 
 namespace StoreManagement.API
 {
@@ -26,11 +28,16 @@ namespace StoreManagement.API
         public void ConfigureServices(IServiceCollection services)
         {
             services.Configure<AppSettings>(Configuration);
-            services.AddControllers();
-            services.AddHttpContextAccessor();
+            services.AddControllers().AddNewtonsoftJson(options =>
+            {
+                options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
+                options.SerializerSettings.Converters.Add(new IsoDateTimeConverter { DateTimeFormat = "dd/MM/yyyy HH:mm:ss" });
+            });
+
+           services.AddHttpContextAccessor();
             var connectionString = Configuration.GetConnectionString("PostgresDb");
             services.AddScoped<IDbConnection, NpgsqlConnection>(_ => new NpgsqlConnection(connectionString));
-            services.AddDbContext<LAppContext>(opts => opts.UseNpgsql(connectionString).UseSnakeCaseNamingConvention());
+            services.AddDbContext<StoreAppContext>(opts => opts.UseNpgsql(connectionString).UseSnakeCaseNamingConvention());
             services.AddSingleton(new ConnectionString(connectionString));
      
 

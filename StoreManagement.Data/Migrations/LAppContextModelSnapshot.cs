@@ -8,7 +8,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace StoreManagement.Data.Migrations
 {
-    [DbContext(typeof(LAppContext))]
+    [DbContext(typeof(StoreAppContext))]
     partial class LAppContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)
